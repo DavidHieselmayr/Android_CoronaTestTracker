@@ -3,8 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/schule/programmieren/5BHITM/android/CoronaTestTracker/app/src/main/res/layout/activity_main.xml" value="0.2074074074074074" />
-        <entry key="..\:/schule/programmieren/5BHITM/android/CoronaTestTracker/app/src/main/res/layout/fragment_welcome.xml" value="0.2074074074074074" />
+        <entry key="..\:/schule/programmieren/5BHITM/android/CoronaTestTracker/app/src/main/res/layout/activity_main.xml" value="0.5" />
+        <entry key="..\:/schule/programmieren/5BHITM/android/CoronaTestTracker/app/src/main/res/layout/fragment_new_report.xml" value="0.5541666666666667" />
+        <entry key="..\:/schule/programmieren/5BHITM/android/CoronaTestTracker/app/src/main/res/layout/fragment_welcome.xml" value="0.25" />
       </map>
     </option>
   </component>

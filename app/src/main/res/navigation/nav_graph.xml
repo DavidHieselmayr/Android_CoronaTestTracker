@@ -3,11 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/welcomeFragment">
+    app:startDestination="@id/newReport">
 
     <fragment
         android:id="@+id/welcomeFragment"
         android:name="at.htl.leonding.coronatesttracker.WelcomeFragment"
         android:label="fragment_welcome"
-        tools:layout="@layout/fragment_welcome" />
+        tools:layout="@layout/fragment_welcome" >
+        <action
+            android:id="@+id/action_welcomeFragment_to_newReport"
+            app:destination="@id/newReport" />
+    </fragment>
+    <fragment
+        android:id="@+id/newReport"
+        android:name="at.htl.leonding.coronatesttracker.NewReport"
+        android:label="fragment_new_report"
+        tools:layout="@layout/fragment_new_report" />
 </navigation>

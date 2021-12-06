@@ -2,4 +2,9 @@
     <string name="app_name">CoronaTestTracker</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title">CoronaTest</string>
+    <string name="bt_create_new_report">create new Report</string>
+    <string name="positiv">positiv</string>
+    <string name="standort">Standort</string>
+    <string name="save">save</string>
 </resources>
