@@ -14,10 +14,29 @@
             android:id="@+id/action_welcomeFragment_to_newReport"
             app:destination="@id/newReport"
             app:enterAnim="@anim/nav_default_enter_anim" />
+        <action
+            android:id="@+id/action_welcomeFragment_to_reportList"
+            app:destination="@id/reportList" />
     </fragment>
     <fragment
         android:id="@+id/newReport"
         android:name="at.htl.leonding.coronatesttracker.NewReport"
         android:label="fragment_new_report"
-        tools:layout="@layout/fragment_new_report" />
+        tools:layout="@layout/fragment_new_report" >
+        <action
+            android:id="@+id/action_newReport_to_reportList"
+            app:destination="@id/reportList" />
+    </fragment>
+    <fragment
+        android:id="@+id/reportList"
+        android:name="at.htl.leonding.coronatesttracker.ReportList"
+        android:label="fragment_report_list"
+        tools:layout="@layout/fragment_report_list" >
+        <action
+            android:id="@+id/action_reportList_to_welcomeFragment"
+            app:destination="@id/welcomeFragment" />
+        <action
+            android:id="@+id/action_reportList_to_newReport"
+            app:destination="@id/newReport" />
+    </fragment>
 </navigation>

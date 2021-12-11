@@ -26,6 +26,11 @@ class WelcomeFragment : Fragment() {
         binding.creatNewReport.setOnClickListener { view ->
             view.findNavController().navigate(R.id.action_welcomeFragment_to_newReport)
         }
+
+        binding.viewReportList.setOnClickListener { view ->
+            view.findNavController().navigate(R.id.action_welcomeFragment_to_reportList)
+        }
+
         setHasOptionsMenu(true)
         return binding.root
     }

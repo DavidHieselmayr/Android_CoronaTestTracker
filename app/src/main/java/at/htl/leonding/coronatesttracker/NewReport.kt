@@ -35,6 +35,10 @@ class NewReport : Fragment() {
         val arrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_item, offices)
         binding.autoCompleteTextView.setAdapter(arrayAdapter)
 
+        binding.btSave.setOnClickListener{
+            view -> view.findNavController().navigate(R.id.action_newReport_to_reportList)
+        }
+
         return binding.root;
 
     }

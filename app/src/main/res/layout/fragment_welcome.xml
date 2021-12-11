@@ -23,12 +23,13 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/texttitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="17dp"
             android:text="@string/title"
+            android:textColor="@color/black"
+            android:textSize="26sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/guideline3"
             app:layout_constraintTop_toBottomOf="@+id/guideline4" />
 
@@ -45,11 +46,27 @@
             android:id="@+id/creatNewReport"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="274dp"
-            android:text="@string/bt_create_new_report"
+            android:layout_marginBottom="6dp"
+            android:text="@string/create_new_report"
+            app:layout_constraintBottom_toTopOf="@+id/viewReportList"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2" />
+
+        <Button
+            android:id="@+id/viewReportList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:text="@string/view_report_list"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline2" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/guideline4" />
+            app:layout_constraintGuide_begin="395dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

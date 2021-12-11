@@ -1,16 +1,25 @@
 <resources>
     <string name="app_name">CoronaTestTracker</string>
+    <string name="id">id</string>
+    <string name="positive">positive</string>
+    <string name="time">time</string>
+    <string name="date">date</string>
+    <string name="offices">Offices</string>
+    <string name="linz_stadtplatz">Linz-Stadtplatz</string>
+    <string name="btsave">save</string>
+    <string name="title">Corona Test Tracker</string>
+    <string name="create_new_report">create new report</string>
+    <string name="view_report_list">view Report List</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title">CoronaTest</string>
-    <string name="bt_create_new_report">create new Report</string>
-    <string name="positiv">positiv</string>
-    <string name="standort">Standort</string>
-    <string name="save">save</string>
 
     <string-array name="offices">
         <item>Linz-Stadtplatz</item>
         <item>Leonding-Meixnerkreuzung</item>
         <item>Parkplatz-Haidcenter</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="btHome">Tagesübersicht</string>
+    <string name="defaultDateText">JAN 01 2021</string>
+    <string name="titleReportList">Liste der durchgeführten Testungen</string>
 </resources>
