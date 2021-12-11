@@ -5,6 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
+import at.htl.leonding.coronatesttracker.databinding.FragmentWelcomeBinding
 
 class WelcomeFragment : Fragment() {
 
@@ -16,6 +19,14 @@ class WelcomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_welcome, container, false)
+        val binding: FragmentWelcomeBinding = DataBindingUtil.inflate(
+            inflater, R.layout.fragment_welcome, container, false
+        )
+
+        binding.creatNewReport.setOnClickListener { view ->
+            view.findNavController().navigate(R.id.action_welcomeFragment_to_newReport)
+        }
+        setHasOptionsMenu(true)
+        return binding.root
     }
 }

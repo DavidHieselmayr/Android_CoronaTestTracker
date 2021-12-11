@@ -7,4 +7,10 @@
     <string name="positiv">positiv</string>
     <string name="standort">Standort</string>
     <string name="save">save</string>
+
+    <string-array name="offices">
+        <item>Linz-Stadtplatz</item>
+        <item>Leonding-Meixnerkreuzung</item>
+        <item>Parkplatz-Haidcenter</item>
+    </string-array>
 </resources>
