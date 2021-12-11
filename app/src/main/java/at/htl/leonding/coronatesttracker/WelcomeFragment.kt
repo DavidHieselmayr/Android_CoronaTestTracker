@@ -11,6 +11,7 @@ import at.htl.leonding.coronatesttracker.databinding.FragmentWelcomeBinding
 
 class WelcomeFragment : Fragment() {
 
+    @Override
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -23,15 +24,13 @@ class WelcomeFragment : Fragment() {
             inflater, R.layout.fragment_welcome, container, false
         )
 
-        binding.creatNewReport.setOnClickListener { view ->
+        binding.createNewReport.setOnClickListener { view ->
             view.findNavController().navigate(R.id.action_welcomeFragment_to_newReport)
         }
 
         binding.viewReportList.setOnClickListener { view ->
             view.findNavController().navigate(R.id.action_welcomeFragment_to_reportList)
         }
-
-        setHasOptionsMenu(true)
         return binding.root
     }
 }

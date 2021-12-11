@@ -33,6 +33,11 @@ class ReportList : Fragment() {
             view.findNavController().navigate(R.id.action_reportList_to_welcomeFragment)
         }
 
+
+        binding.btNewReport.setOnClickListener { view ->
+            view.findNavController().navigate(R.id.action_reportList_to_newReport)
+        }
+
         return binding.root
     }
 

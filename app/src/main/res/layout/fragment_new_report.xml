@@ -57,27 +57,15 @@
             app:layout_constraintStart_toEndOf="@+id/btn_timePicker"
             app:layout_constraintTop_toBottomOf="@+id/inputId" />
 
-        <EditText
-            android:id="@+id/editTextTime"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="19dp"
-            android:ems="10"
-            android:hint="@string/time"
-            android:inputType="time"
-            android:minHeight="48dp"
-            app:layout_constraintStart_toStartOf="@id/guidelineLeft"
-            app:layout_constraintTop_toBottomOf="@+id/btn_timePicker" />
-
         <Switch
             android:id="@+id/input_positiv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="19dp"
+            android:layout_marginTop="16dp"
             android:minHeight="48dp"
             android:text="@string/positive"
             app:layout_constraintStart_toStartOf="@id/guidelineLeft"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTime" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_timePicker" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout"
