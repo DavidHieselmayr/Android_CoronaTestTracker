@@ -7,7 +7,6 @@ import android.os.Bundle
 import androidx.activity.viewModels
 
 import at.htl.leonding.coronatesttracker.Model.CoronaReportAppModel
-import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
