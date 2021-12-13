@@ -25,7 +25,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
-            android:id="@+id/inputId"
+            android:id="@+id/et_inputId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="37dp"
@@ -46,7 +46,7 @@
             android:minHeight="48dp"
             android:textSize="12sp"
             app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
-            app:layout_constraintTop_toBottomOf="@+id/inputId" />
+            app:layout_constraintTop_toBottomOf="@+id/et_inputId" />
 
         <EditText
             android:id="@+id/et_datePicker"
@@ -59,10 +59,10 @@
             android:minHeight="48dp"
             android:textSize="12sp"
             app:layout_constraintStart_toEndOf="@+id/et_timePicker"
-            app:layout_constraintTop_toBottomOf="@+id/inputId" />
+            app:layout_constraintTop_toBottomOf="@+id/et_inputId" />
 
         <Switch
-            android:id="@+id/input_positiv"
+            android:id="@+id/switch_inputPositiv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -82,7 +82,7 @@
             android:hint="@string/offices"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
-            app:layout_constraintTop_toBottomOf="@+id/input_positiv"
+            app:layout_constraintTop_toBottomOf="@+id/switch_inputPositiv"
             app:startIconDrawable="@drawable/ic_baseline_house_24">
 
             <AutoCompleteTextView

@@ -42,16 +42,16 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/createNewReport"
+            android:id="@+id/btcreateNewReport"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="9dp"
             android:text="@string/neute_testung_eingeben"
-            app:layout_constraintBottom_toTopOf="@+id/viewReportList"
+            app:layout_constraintBottom_toTopOf="@+id/btViewReportList"
             app:layout_constraintEnd_toStartOf="@+id/guideline2" />
 
         <Button
-            android:id="@+id/viewReportList"
+            android:id="@+id/btViewReportList"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/view_report_list"
@@ -114,7 +114,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
         <TextView
-            android:id="@+id/textView9"
+            android:id="@+id/tv_quantityLinzStadtplatz"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
@@ -123,22 +123,22 @@
             app:layout_constraintTop_toBottomOf="@+id/progressBar" />
 
         <TextView
-            android:id="@+id/textView10"
+            android:id="@+id/tv_quantityLeonding"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
             android:text="@string/anzahl"
-            app:layout_constraintEnd_toEndOf="@+id/textView9"
-            app:layout_constraintTop_toBottomOf="@+id/textView9" />
+            app:layout_constraintEnd_toEndOf="@+id/tv_quantityLinzStadtplatz"
+            app:layout_constraintTop_toBottomOf="@+id/tv_quantityLinzStadtplatz" />
 
         <TextView
-            android:id="@+id/textView11"
+            android:id="@+id/tv_quantityHaid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
             android:text="@string/anzahl"
-            app:layout_constraintEnd_toEndOf="@+id/textView10"
-            app:layout_constraintTop_toBottomOf="@+id/textView10" />
+            app:layout_constraintEnd_toEndOf="@+id/tv_quantityLeonding"
+            app:layout_constraintTop_toBottomOf="@+id/tv_quantityLeonding" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
