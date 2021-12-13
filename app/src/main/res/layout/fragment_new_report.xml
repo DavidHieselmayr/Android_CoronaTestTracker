@@ -36,25 +36,29 @@
             app:layout_constraintStart_toStartOf="@id/guidelineLeft"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/btn_timePicker"
+        <EditText
+            android:id="@+id/et_timePicker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="19dp"
-            android:text="@string/defaultDateText"
-            android:textColor="@color/white"
+            android:hint="Zeit Eingabe"
+            android:inputType="none"
+            android:minHeight="48dp"
             android:textSize="12sp"
             app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
             app:layout_constraintTop_toBottomOf="@+id/inputId" />
 
-        <TextView
-            android:id="@+id/tv_textTime"
+        <EditText
+            android:id="@+id/et_datePicker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="35dp"
-            android:text="@tools:sample/date/ddmmyy"
-            app:layout_constraintStart_toEndOf="@+id/btn_timePicker"
+            android:layout_marginTop="19dp"
+            android:hint="Datums Eingabe"
+            android:inputType="none"
+            android:minHeight="48dp"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/et_timePicker"
             app:layout_constraintTop_toBottomOf="@+id/inputId" />
 
         <Switch
@@ -65,7 +69,7 @@
             android:minHeight="48dp"
             android:text="@string/positive"
             app:layout_constraintStart_toStartOf="@id/guidelineLeft"
-            app:layout_constraintTop_toBottomOf="@+id/btn_timePicker" />
+            app:layout_constraintTop_toBottomOf="@+id/et_timePicker" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout"
