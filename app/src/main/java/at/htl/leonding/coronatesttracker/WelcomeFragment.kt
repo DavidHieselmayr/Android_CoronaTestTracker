@@ -6,10 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
+import at.htl.leonding.coronatesttracker.Model.CoronaReportAppModel
 import at.htl.leonding.coronatesttracker.databinding.FragmentWelcomeBinding
 
 class WelcomeFragment : Fragment() {
+    private val coronaReportAppModel: CoronaReportAppModel by activityViewModels()
 
     @Override
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,6 +34,23 @@ class WelcomeFragment : Fragment() {
         binding.btViewReportList.setOnClickListener { view ->
             view.findNavController().navigate(R.id.action_welcomeFragment_to_reportList)
         }
+
+        var positive = 0
+        var negative = 0
+
+        coronaReportAppModel.reportList.value?.filter { //TODO only today
+            true}?.forEach {
+            if (it.isPositive) {
+                positive++;
+            } else {
+                negative++;
+            }
+        }
+
+        // binding.progressBar.progress = positive / (positive + negative) * 100;
+        binding.progressBar.max = positive + negative;
+        binding.progressBar.min = 0
+        binding.progressBar.progress = positive;
         return binding.root
     }
 }

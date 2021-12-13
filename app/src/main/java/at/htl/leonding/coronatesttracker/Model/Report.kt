@@ -1,7 +1,6 @@
 package at.htl.leonding.coronatesttracker.Model
 
 import java.time.LocalDateTime
-import java.util.*
 
 
 data class Report(
