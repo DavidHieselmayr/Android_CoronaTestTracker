@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
+import at.htl.leonding.coronatesttracker.Model.CoronaReportAppModel
 import at.htl.leonding.coronatesttracker.databinding.FragmentReportListBinding
 
 /**
@@ -15,6 +17,7 @@ import at.htl.leonding.coronatesttracker.databinding.FragmentReportListBinding
  * create an instance of this fragment.
  */
 class ReportList : Fragment() {
+    private val coronaReportAppModel: CoronaReportAppModel by activityViewModels()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,10 +36,24 @@ class ReportList : Fragment() {
             view.findNavController().navigate(R.id.action_reportList_to_welcomeFragment)
         }
 
-
         binding.btNewReport.setOnClickListener { view ->
             view.findNavController().navigate(R.id.action_reportList_to_newReport)
         }
+
+        val stringBuilder = StringBuilder()
+        coronaReportAppModel.reportList.value?.forEach {
+            stringBuilder.append(
+                String.format(
+                    "%s;%s;%s;%s\n",
+                    it.id,
+                    it.dateAndTime,
+                    it.isPositive.toString(),
+                    it.office
+                )
+            )
+        }
+
+        binding.tvReportList.text = stringBuilder.toString()
 
         return binding.root
     }

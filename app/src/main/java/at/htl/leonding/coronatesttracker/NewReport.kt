@@ -8,10 +8,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
+import at.htl.leonding.coronatesttracker.Model.CoronaReportAppModel
+import at.htl.leonding.coronatesttracker.Model.Report
 import at.htl.leonding.coronatesttracker.databinding.FragmentNewReportBinding
 import java.time.LocalDate
+import java.time.LocalDateTime
 import java.time.LocalTime
 import java.util.*
 
@@ -21,6 +26,8 @@ import java.util.*
  * create an instance of this fragment.
  */
 class NewReport : Fragment() {
+    private val coronaReportAppModel: CoronaReportAppModel by activityViewModels()
+
     var datePickerDialog: DatePickerDialog? = null
     var timePickerDialog: TimePickerDialog? = null
 
@@ -41,17 +48,23 @@ class NewReport : Fragment() {
             inflater, R.layout.fragment_new_report, container, false
         )
 
-
-
         binding.etDatePicker.inputType = 0
         binding.etTimePicker.inputType = 0
 
         val offices = resources.getStringArray(R.array.offices)
         val arrayAdapter = ArrayAdapter(requireContext(), R.layout.dropdown_item, offices)
-        binding.autoCompleteTextView.setAdapter(arrayAdapter)
+        binding.dropdownPlace.setAdapter(arrayAdapter)
 
-        binding.btSave.setOnClickListener { view ->
-            view.findNavController().navigate(R.id.action_newReport_to_reportList)
+        binding.btSave.setOnClickListener {
+            val report: Report = Report(
+                binding.etInputId.text.toString(),
+                //TODO: Monat muss noch richtig gesetzt werden
+                LocalDateTime.of(date, time),
+                binding.switchInputPositiv.isChecked,
+                binding.dropdownPlace.text.toString()
+            )
+            coronaReportAppModel.addReport(report)
+            it.findNavController().navigate(R.id.action_newReport_to_reportList)
         }
 
         binding.etDatePicker.setOnClickListener { view ->
