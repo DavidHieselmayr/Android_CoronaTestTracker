@@ -24,11 +24,11 @@ class WelcomeFragment : Fragment() {
             inflater, R.layout.fragment_welcome, container, false
         )
 
-        binding.createNewReport.setOnClickListener { view ->
+        binding.btcreateNewReport.setOnClickListener { view ->
             view.findNavController().navigate(R.id.action_welcomeFragment_to_newReport)
         }
 
-        binding.viewReportList.setOnClickListener { view ->
+        binding.btViewReportList.setOnClickListener { view ->
             view.findNavController().navigate(R.id.action_welcomeFragment_to_reportList)
         }
         return binding.root
