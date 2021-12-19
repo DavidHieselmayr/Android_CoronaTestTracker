@@ -57,11 +57,14 @@ class NewReport : Fragment() {
         binding.btSave.setOnClickListener {
             val report: Report = Report(
                 binding.etInputId.text.toString(),
-                //TODO: Monat muss noch richtig gesetzt werden
                 LocalDateTime.of(date, time),
                 binding.switchInputPositiv.isChecked,
                 binding.dropdownPlace.text.toString()
             )
+            //TODO modify month in report :(
+            var testDate: LocalDateTime = report.dateAndTime
+            testDate.plusMonths(1)
+
             coronaReportAppModel.addReport(report)
             it.findNavController().navigate(R.id.action_newReport_to_reportList)
         }
