@@ -10,6 +10,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.findNavController
 import at.htl.leonding.coronatesttracker.Model.CoronaReportAppModel
 import at.htl.leonding.coronatesttracker.databinding.FragmentWelcomeBinding
+import java.time.LocalDate
 
 class WelcomeFragment : Fragment() {
     private val coronaReportAppModel: CoronaReportAppModel by activityViewModels()
@@ -37,13 +38,32 @@ class WelcomeFragment : Fragment() {
 
         var positive = 0
         var negative = 0
+        var linz = 0
+        var leonding = 0
+        var haid = 0
 
+        var dateNow: LocalDate = LocalDate.now();
+
+        // it.dateAndTime.dayOfMonth == dateNow.dayOfMonth && it.dateAndTime.dayOfMonth == dateNow.dayOfMonth && it.dateAndTime.monthValue == dateNow.monthValue && it.dateAndTime.year == dateNow.year
         coronaReportAppModel.reportList.value?.filter { //TODO only today
-            true}?.forEach {
+            true
+        }?.forEach {
+            println(it.dateAndTime.monthValue)
+            println(dateNow.monthValue)
+
+            if (it.dateAndTime.monthValue == dateNow.monthValue) {
+                println("true")
+            }
             if (it.isPositive) {
                 positive++;
             } else {
                 negative++;
+            }
+
+            when (it.office) {
+                "Linz-Stadtplatz" -> linz++
+                "Leonding-Meixnerkreuzung" -> leonding++
+                "Parkplatz-Haidcenter" -> haid++
             }
         }
 
@@ -51,6 +71,11 @@ class WelcomeFragment : Fragment() {
         binding.progressBar.max = positive + negative;
         binding.progressBar.min = 0
         binding.progressBar.progress = positive;
+
+
+        binding.tvQuantityLinzStadtplatz.text = linz.toString()
+        binding.tvQuantityLeonding.text = leonding.toString()
+        binding.tvQuantityHaid.text = haid.toString()
         return binding.root
     }
 }
